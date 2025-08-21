@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Degree Roadmap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #1e293b;
+    }
+
+    nav {
+      background: linear-gradient(to right, #4f46e5, #6366f1);
+      color: white;
+      padding: 24px 0;
+      text-align: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #c7d2fe;
+    }
+
+    .container {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: #1e293b;
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .btn {
+      padding: 24px 36px;
+      background: linear-gradient(to right, #6366f1, #8b5cf6);
+      color: white;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.3rem;
+      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.2);
+      transition: transform 0.25s, background 0.25s;
+      min-width: 260px;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #4338ca, #7c3aed);
+      transform: scale(1.07);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .btn {
+        font-size: 1.1rem;
+        padding: 18px 28px;
+        min-width: 200px;
+      }
+
+      nav {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="degree.html">Home</a>
+    <a href="subjects.html">Subjects</a>
+    <a href="government-jobs.html">Govt Jobs</a>
+    <a href="private-jobs.html">Private Jobs</a>
+    <a href="both-sector-jobs.html">Both Sectors</a>
+  </nav>
+  <div class="container">
+    <h1>Explore Your Degree Path</h1>
+    <div class="button-grid">
+      <a href="subjects.html" class="btn">📘 Subjects</a>
+      <a href="government-jobs.html" class="btn">🏛 Government Jobs</a>
+      <a href="private-jobs.html" class="btn">💼 Private Jobs</a>
+      <a href="both-sector-jobs.html" class="btn">🔄 Both Sectors</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Branches</title>
+  <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f7;
+  color: #1e293b;
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #4fbcff, #3581ec);
+  color: #fff;
+  padding: 25px 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  text-align: left;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.sidebar button:hover {
+  background-color: #ffffff;
+  color: #2563eb;
+  font-weight: bold;
+  transform: translateX(5px);
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: #f8fafc;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.content p {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.content strong {
+  color: #1e40af;
+}
+
+/* Scrollbars */
+.sidebar::-webkit-scrollbar, .content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb, .content::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track, .content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+  .content {
+    padding: 20px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Engineering Branches</h2>
+    <button onclick="showBranch('cse')">Computer Science & Engineering</button>
+    <button onclick="showBranch('me')">Mechanical Engineering</button>
+    <button onclick="showBranch('ce')">Civil Engineering</button>
+    <button onclick="showBranch('ee')">Electrical Engineering</button>
+    <button onclick="showBranch('ece')">Electronics & Communication</button>
+    <button onclick="showBranch('che')">Chemical Engineering</button>
+    <button onclick="showBranch('it')">Information Technology</button>
+    <button onclick="showBranch('aero')">Aerospace Engineering</button>
+    <button onclick="showBranch('biotech')">Biotechnology Engineering</button>
+    <button onclick="showBranch('auto')">Automobile Engineering</button>
+  </div>
+  <div class="content" id="branchDetails">
+    <h2>Select a branch to view details</h2>
+  </div>
+  <script>
+    const branches = {
+      cse: `
+        <h1>Computer Science and Engineering (CSE)</h1>
+        <p><strong>Overview:</strong> Focuses on computation, programming, algorithms, data structures, AI, and networking. It's highly versatile with applications in almost every industry.</p>
+        <p><strong>Semester-wise Subjects:</strong> Mathematics, Programming, Data Structures, Algorithms, Operating Systems, Databases, Web Development, AI, ML, Cybersecurity, Final Project.</p>
+        <p><strong>Top Career Options:</strong> Software Developer, Data Scientist, Web Developer, AI Engineer, Cybersecurity Analyst.</p>
+        <p><strong>Entrance Exams:</strong> JEE Main/Advanced, GATE, University-level tests.</p>
+        <p><strong>Reference Books:</strong> CLRS (Algorithms), Galvin (OS), Kurose (Networking), Ullman (DBMS)</p>
+        <p><strong>Skills to Develop:</strong> Coding (Python, C++, Java), Problem Solving, Git, Linux, Cloud Computing.</p>
+        <p><strong>Scholarships:</strong> Central Sector Scholarship, State Scholarships, Google Women Techmakers Scholarship.</p>
+        <p><strong>Online Platforms:</strong> LeetCode, GeeksforGeeks, Coursera, edX, NPTEL.</p>
+        <p><strong>Practical Projects:</strong> Web/App Development, Chatbots, Blockchain Apps, Cloud Tools.</p>
+        <p><strong>Additional Tips:</strong> Build a GitHub profile, participate in hackathons, internships from 2nd year.</p>
+      `,
+      me: `
+        <h1>Mechanical Engineering</h1>
+        <p><strong>Overview:</strong> Deals with design, analysis, and manufacturing of machines and mechanical systems.</p>
+        <p><strong>Subjects:</strong> Thermodynamics, Strength of Materials, Manufacturing, Robotics, CAD/CAM, Heat Transfer.</p>
+        <p><strong>Career Options:</strong> Design Engineer, HVAC Engineer, Automotive Engineer, Researcher, PSU Jobs.</p>
+        <p><strong>Exams:</strong> GATE, IES, SSC JE, RRB JE, BARC, DRDO.</p>
+        <p><strong>Books:</strong> R.K. Jain (Production), Bansal (Thermodynamics), Khurmi (Machine Design)</p>
+        <p><strong>Skills:</strong> AutoCAD, SolidWorks, MATLAB, ANSYS.</p>
+        <p><strong>Internships:</strong> BHEL, ISRO, Tata Motors, L&T.</p>
+        <p><strong>Certifications:</strong> NPTEL courses, SolidWorks certification, Autodesk, Coursera.</p>
+        <p><strong>Extra Tip:</strong> Focus on GATE-oriented preparation early on, maintain practical workshop knowledge.</p>
+      `,
+      ce: `
+        <h1>Civil Engineering</h1>
+        <p><strong>Overview:</strong> Concerned with infrastructure—buildings, roads, bridges, dams, water systems, and urban planning.</p>
+        <p><strong>Subjects:</strong> Structural Analysis, Geotechnical, Environmental, Surveying, RCC, Hydraulics.</p>
+        <p><strong>Careers:</strong> Site Engineer, Structural Engineer, Government Contracts, PSU Jobs.</p>
+        <p><strong>Books:</strong> B.C. Punmia, R.C. Hibbeler, S.K. Duggal</p>
+        <p><strong>Software:</strong> AutoCAD, STAAD.Pro, ETABS, Revit.</p>
+        <p><strong>Government Opportunities:</strong> SSC JE, RRB, State PSC AE, GATE.</p>
+        <p><strong>Internships:</strong> PWD, CPWD, L&T, Nagarjuna Construction.</p>
+        <p><strong>Tip:</strong> Field work experience and AutoCAD are key to faster placements.</p>
+      `,
+      ee: `
+        <h1>Electrical Engineering</h1>
+        <p><strong>Overview:</strong> Study of electrical systems, power generation, machines, circuits, and renewable energy systems.</p>
+        <p><strong>Subjects:</strong> Circuit Theory, Power Systems, Machines, Control Systems, Signal Systems.</p>
+        <p><strong>Books:</strong> Fitzgerald & Kingsley, A. Chakrabarti, Nagrath & Kothari.</p>
+        <p><strong>Career Options:</strong> Electrical Engineer, Energy Consultant, PSU Jobs (NTPC, PGCIL), IES.</p>
+        <p><strong>Skills:</strong> MATLAB, PSCAD, PLC & SCADA knowledge.</p>
+        <p><strong>Opportunities:</strong> Smart grid, Electric Vehicle R&D, Core Electronics.</p>
+      `,
+      ece: `
+        <h1>Electronics & Communication Engineering</h1>
+        <p><strong>Overview:</strong> Combines electronics engineering and communication systems like satellite, mobile, IoT, etc.</p>
+        <p><strong>Subjects:</strong> Analog/Digital Circuits, Communication, Signal Processing, VLSI, Embedded Systems.</p>
+        <p><strong>Skills:</strong> PCB Design, MATLAB, Verilog, IoT, Embedded C.</p>
+        <p><strong>Books:</strong> Boylestad, Haykin, Sedra & Smith, Morris Mano.</p>
+        <p><strong>Jobs:</strong> Core companies, DRDO, ISRO, BEL, Qualcomm, Broadcom.</p>
+      `,
+      che: `
+        <h1>Chemical Engineering</h1>
+        <p><strong>Overview:</strong> Application of chemistry and physics to industrial processes.</p>
+        <p><strong>Subjects:</strong> Process Calculations, Mass Transfer, Thermodynamics, Process Design.</p>
+        <p><strong>Jobs:</strong> Petrochemicals, Pharmaceuticals, FMCG, Process Design, PSUs.</p>
+        <p><strong>Books:</strong> Levenspiel (Reaction Engineering), McCabe (Mass Transfer)</p>
+        <p><strong>Extra:</strong> Internships in IOCL, ONGC, Reliance helpful.</p>
+      `,
+      it: `
+        <h1>Information Technology</h1>
+        <p><strong>Overview:</strong> Deals with software systems, networks, databases, and cybersecurity.</p>
+        <p><strong>Subjects:</strong> DBMS, Networking, OS, Web Tech, Cloud Computing.</p>
+        <p><strong>Careers:</strong> IT Analyst, Security Analyst, Cloud Engineer, Full Stack Developer.</p>
+        <p><strong>Skills:</strong> SQL, Python, Networking Tools, DevOps.</p>
+        <p><strong>Certifications:</strong> AWS, Google Cloud, CCNA, CEH.</p>
+      `,
+      aero: `
+        <h1>Aerospace Engineering</h1>
+        <p><strong>Overview:</strong> Involves design, development, and testing of aircrafts and spacecrafts.</p>
+        <p><strong>Subjects:</strong> Aerodynamics, Propulsion, Flight Mechanics, Avionics.</p>
+        <p><strong>Jobs:</strong> ISRO, HAL, NAL, Private Aerospace, Research Labs.</p>
+        <p><strong>Tip:</strong> Research mindset and internships with ISRO/DRDO are crucial.</p>
+      `,
+      biotech: `
+        <h1>Biotechnology Engineering</h1>
+        <p><strong>Overview:</strong> Integrates biology with technology to develop medical, agricultural, and industrial applications.</p>
+        <p><strong>Subjects:</strong> Genetics, Microbiology, Bioprocess, Immunology.</p>
+        <p><strong>Career:</strong> Research Labs, Pharmaceuticals, Agriculture Biotech, Healthcare.</p>
+        <p><strong>Books:</strong> Lehninger, Lodish, Prescott</p>
+      `,
+      auto: `
+        <h1>Automobile Engineering</h1>
+        <p><strong>Overview:</strong> Deals with designing, manufacturing, and maintenance of automobiles.</p>
+        <p><strong>Subjects:</strong> IC Engines, Vehicle Dynamics, Transmission, Design of Automotive Components.</p>
+        <p><strong>Jobs:</strong> Automotive Companies, R&D Labs, Testing, Maintenance, Motorsport Engineering.</p>
+        <p><strong>Skills:</strong> CATIA, ANSYS, MATLAB, Engine Diagnostics.</p>
+      `
+    };
+
+    function showBranch(branch) {
+      document.getElementById('branchDetails').innerHTML = branches[branch] || '<p>No information available.</p>';
+    }
+  </script>
+</body>
+</html>

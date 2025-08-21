@@ -1,0 +1,100 @@
+/* Center the Page Title */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e40af;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Decorative Line Under Title */
+.page-title::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(to right, #2563eb, #1e40af);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Flexbox Layout for Subjects & Jobs */
+.roadmap-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Subjects & Jobs Sections */
+.subjects, .jobs {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.subjects:hover, .jobs:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Section Headings */
+.subjects h2, .jobs h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.subjects h2::after, .jobs h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #2563eb, #1e40af);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* List Styles */
+.subjects ul, .jobs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subjects li, .jobs li {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    background: #f0f7ff;
+    margin-bottom: 0.8rem;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+/* List Hover Effect */
+.subjects li:hover, .jobs li:hover {
+    background: #dbeafe;
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .roadmap-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subjects, .jobs {
+        width: 100%;
+    }
+}

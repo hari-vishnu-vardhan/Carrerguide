@@ -1,0 +1,133 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ✅ Fixed Navbar */
+.navbar {
+    background-color: #0056b3;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* ✅ Highlight TechCareerGuide */
+.navbar .logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ffdd57; /* Bright yellow highlight */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    text-decoration: none;
+}
+
+/* Navbar Links */
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* ✅ Prevent Content from Hiding Under Navbar */
+.main-content {
+    padding: 100px 20px 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-grow: 1;
+}
+
+/* ✅ Branches Container */
+.branches-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ✅ Engineering Diploma Branch Styling */
+#engineering-section .branch {
+    background-color: #e6f3ff; /* light blue */
+    border-left: 5px solid #0073e6;
+    color: #003366;
+}
+
+/* ✅ Non-Engineering Diploma Branch Styling */
+#non-engineering-section .branch,
+#non-engineering-section .sub-branch {
+    background-color: #fff2e6; /* light peach */
+    border-left: 5px solid #ff9800;
+    color: #5a2e00;
+}
+
+/* ✅ Common Branch Styling */
+.branch, .sub-branch {
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 250px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+    cursor: pointer;
+}
+
+.branch:hover, .sub-branch:hover {
+    transform: translateY(-5px);
+    background-color: #d1ecff;
+}
+
+/* ✅ Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0056b3;
+    color: #fff;
+    margin-top: auto;
+}
+/* ✅ Job Opportunities Branch Styling */
+#jobs-section .branch {
+    background-color: #e6ffe6; /* Light green */
+    border-left: 5px solid #28a745; /* Green border */
+    color: #155724; /* Darker green text */
+}
